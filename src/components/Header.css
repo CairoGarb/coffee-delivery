@@ -1,0 +1,77 @@
+header nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 120px;
+  position: fixed;
+  background-color: #fbfafe;
+  z-index: 3;
+}
+
+.logo:hover {
+    cursor: pointer;
+}
+
+.location_cart {
+  display: flex;
+  gap: 20px;
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  border-radius: 5px;
+  gap: 5px;
+  font-size: 12px;
+  color: var(--purple);
+  font-weight: 400;
+  background-color: var(--light-purple);
+}
+
+.location i {
+  font-size: 16px;
+}
+
+.location:hover {
+  cursor: pointer;
+  transition: 0.2s;
+  color: #fff;
+  background-color: var(--purple);
+}
+
+.cart {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: var(--light-yellow);
+  color: var(--orange);
+  padding: 12px;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.cart:hover {
+  cursor: pointer;
+  transition: 0.2s;
+  color: #fff;
+  background-color: var(--orange);
+}
+
+.quantity_cart {
+  position: absolute;
+  top: -5px;
+  font-size: 14px;
+  right: -10px;
+  background-color: var(--orange);
+  color: var(--light-yellow);
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+
+@media screen and (max-width: 1440px) {
+    header nav {
+        padding: 20px 40px;
+    }
+}
