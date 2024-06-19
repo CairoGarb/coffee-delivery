@@ -202,7 +202,7 @@ export const Order: React.FC = () => {
               </div>
             </div>
             <div className="order_confirmed_image">
-              <img src="./illustration.png" alt="illustration" />
+              <img src="/illustration.png" alt="illustration" />
             </div>
           </div>
         ) : (
