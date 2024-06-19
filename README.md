@@ -12,4 +12,5 @@ Seção Nossos Cafés:
 - Mostra todos os produtos(cafés) disponíveis (imagem, nome, descrição, valor) e contém dois botões para interagir: - e +, que alteram a quantidade e, o botão de adicionar ao carrinho.
 
 ### Screenshot
-![screenshot](/public/screenshot.jpg?raw=true "screenshot")
+![screenshot](/public/screenshot.jpg?raw=true "screenshot_home")
+![screenshot_2](/public/screenshot_2.png?raw=true "screenshot_nossoscafes")
