@@ -10,7 +10,8 @@ interface HeaderProps {
 export const Header: React.FC<HeaderProps> = ({ handleCart, returnMenu }) => {
   const { cartItems } = useCartContext();
 
-  const totalItems = cartItems.reduce((acc, item) => acc + item.quantity, 0);
+  const totalItems = new Set(cartItems.map(item => item.id));
+  const totalItemsId = totalItems.size;
 
   return (
     <header>
@@ -25,7 +26,7 @@ export const Header: React.FC<HeaderProps> = ({ handleCart, returnMenu }) => {
           </div>
           <div className="cart" onClick={handleCart}>
             <i className="fa-solid fa-cart-shopping"></i>
-            <div className="quantity_cart">{totalItems}</div>
+            <div className="quantity_cart">{totalItemsId}</div>
           </div>
         </div>
       </nav>

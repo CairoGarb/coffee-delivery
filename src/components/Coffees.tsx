@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import "./Coffees.css";
 import { data } from "./data";
 import { useCartContext } from "../context/CartContext";
@@ -30,6 +30,9 @@ export const Coffees: React.FC = () => {
     }));
   };
 
+  const [message, setMessage] = useState<number | null>(null);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
   const handleAddToCart = (item: any) => {
     if (quantities[item.id] > 0) {
       const newItem = {
@@ -42,6 +45,18 @@ export const Coffees: React.FC = () => {
         ...prev,
         [item.id]: 0,
       }));
+      // aparece a mensagem confirmando que foi adicionado ao carrinho
+      setMessage(item.id);
+
+      // reseta o tempo que a mensagem aparece caso for adicionado outro item
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+
+      // a mensagem de confirmação desaparece após 2 segundos
+      timeoutRef.current = setTimeout(() => {
+        setMessage(null);
+      }, 2000);
     }
   };
 
@@ -87,6 +102,13 @@ export const Coffees: React.FC = () => {
                 >
                   <i className="fa-solid fa-cart-shopping"></i>
                 </div>
+                {message === item.id && (
+                  <div className="add_to_cart_message">
+                    <span>
+                      <strong>{item.name}</strong> foi adicionado ao carrinho!
+                    </span>
+                  </div>
+                )}
               </div>
             </div>
           ))}
